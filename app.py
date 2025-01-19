@@ -30,7 +30,7 @@ client = DataAPIClient("AstraCS:YHjGXrTelvIdwyLKdfQEikUg:0e3f97d040e889f40f69352
 database = client.get_database("https://abaaa4b6-d3ac-4b2e-b373-4384569942fa-us-east-2.apps.astra.datastax.com")
 collection = database.get_collection("data2")  # Using single collection
 
-JSON_DIR = "/home/ranjeet/Desktop/AI"
+JSON_DIR = "/"
 
 @app.route("/name", methods=["GET"])
 def get_user_name():
@@ -46,7 +46,7 @@ def get_user_name():
 
 @app.route("/planet/<planet_name>", methods=["GET"])  # Accept a dynamic planet name from the URL
 def get_planet_data(planet_name):
-    # Construct the path to the JSON file based on the planet name
+    # Construct the path to the  file based on the planet name
     planet_file = os.path.join(JSON_DIR, f"{planet_name}_report.json")
     
     if os.path.exists(planet_file):
