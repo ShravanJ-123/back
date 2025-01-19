@@ -30,7 +30,9 @@ client = DataAPIClient("AstraCS:YHjGXrTelvIdwyLKdfQEikUg:0e3f97d040e889f40f69352
 database = client.get_database("https://abaaa4b6-d3ac-4b2e-b373-4384569942fa-us-east-2.apps.astra.datastax.com")
 collection = database.get_collection("data2")  # Using single collection
 
-JSON_DIR = "/"
+JSON_DIR = os.getcwd() 
+JSON_DIR = os.path.join(JSON_DIR, "AI")
+os.makedirs(JSON_DIR, exist_ok=True)
 
 @app.route("/name", methods=["GET"])
 def get_user_name():
